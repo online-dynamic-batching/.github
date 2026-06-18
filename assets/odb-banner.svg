@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="320" viewBox="0 0 760 320" role="img" aria-labelledby="title desc">
+  <title id="title">Online Dynamic Batching project banner</title>
+  <desc id="desc">A compact project banner showing inputs flowing through the real training pipeline, ODB forming online token-budgeted groups, and trainer or DDP integration consuming step metadata.</desc>
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --ink: #172033;
+      --muted: #5d6b80;
+      --line: #d9e1ec;
+      --panel: #ffffff;
+      --blue: #2f6fed;
+      --blue-soft: #edf4ff;
+      --green: #1c9c5a;
+      --green-soft: #eaf8f0;
+      --violet: #6f42c1;
+      --violet-soft: #f5f0ff;
+      --amber: #d88a13;
+      --red: #d64545;
+      --shadow: rgba(23, 32, 51, 0.10);
+    }
+    .bg { fill: var(--bg); }
+    .orb { fill: #dbe8ff; opacity: .72; }
+    .panel { fill: var(--panel); stroke: var(--line); stroke-width: 1.2; rx: 18; }
+    .stage-blue { fill: var(--blue-soft); stroke: #a9c5fa; stroke-width: 1.3; rx: 14; }
+    .stage-green { fill: var(--green-soft); stroke: #abdcbc; stroke-width: 1.3; rx: 14; }
+    .stage-violet { fill: var(--violet-soft); stroke: #cebbed; stroke-width: 1.3; rx: 14; }
+    .title { fill: var(--ink); font: 760 27px system-ui, -apple-system, Segoe UI, sans-serif; }
+    .subtitle { fill: var(--muted); font: 520 13px system-ui, -apple-system, Segoe UI, sans-serif; }
+    .label { fill: var(--ink); font: 720 14px system-ui, -apple-system, Segoe UI, sans-serif; }
+    .small { fill: var(--muted); font: 540 10.5px system-ui, -apple-system, Segoe UI, sans-serif; }
+    .mono { fill: var(--ink); font: 660 10px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .chip { fill: #ffffff; stroke: var(--line); stroke-width: 1; rx: 10; filter: drop-shadow(0 1px 3px var(--shadow)); }
+    .sample { rx: 5; filter: drop-shadow(0 1px 2px var(--shadow)); }
+    .group { fill: #ffffff; stroke: #b8c7db; stroke-width: 1.1; rx: 8; filter: drop-shadow(0 2px 4px var(--shadow)); }
+    .arrow { stroke: #8a96a8; stroke-width: 2.2; fill: none; marker-end: url(#arrow); }
+    .arrow-blue { stroke: var(--blue); stroke-width: 2.4; fill: none; marker-end: url(#arrow-blue); }
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8a96a8"/>
+    </marker>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2f6fed"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="760" height="320"/>
+  <circle class="orb" cx="62" cy="274" r="50"/>
+  <circle class="orb" cx="700" cy="54" r="56"/>
+
+  <text class="title" x="42" y="54">Training-time length observability</text>
+  <text class="subtitle" x="44" y="80">Dynamic batching after the input pipeline reveals the real training shape.</text>
+
+  <rect class="panel" x="42" y="108" width="676" height="158"/>
+
+  <rect class="stage-blue" x="68" y="138" width="170" height="92"/>
+  <text class="label" x="88" y="166">Real pipeline</text>
+  <text class="small" x="88" y="188">templates, tokens, vision</text>
+  <rect class="chip" x="88" y="204" width="44" height="20"/>
+  <text class="mono" x="101" y="218">len</text>
+  <rect class="chip" x="140" y="204" width="72" height="20"/>
+  <text class="mono" x="154" y="218">observed</text>
+
+  <path class="arrow-blue" d="M 256 184 C 276 184, 290 184, 310 184"/>
+
+  <rect class="stage-green" x="330" y="138" width="204" height="92"/>
+  <text class="label" x="350" y="166">ODB grouping</text>
+  <text class="small" x="350" y="188">online token-budgeted batches</text>
+  <rect class="sample" x="350" y="208" width="22" height="12" fill="var(--green)"/>
+  <rect class="sample" x="380" y="208" width="28" height="12" fill="var(--green)"/>
+  <rect class="sample" x="416" y="208" width="48" height="12" fill="var(--amber)"/>
+  <rect class="sample" x="472" y="208" width="42" height="12" fill="var(--red)"/>
+
+  <path class="arrow" d="M 552 184 C 572 184, 586 184, 606 184"/>
+
+  <rect class="stage-violet" x="624" y="138" width="76" height="92"/>
+  <text class="label" x="638" y="166">Trainer</text>
+  <text class="small" x="638" y="188">DDP</text>
+  <rect class="group" x="638" y="204" width="24" height="20"/>
+  <text class="mono" x="644" y="218">g</text>
+  <rect class="group" x="668" y="204" width="22" height="20"/>
+  <text class="mono" x="673" y="218">i</text>
+
+  <text class="small" x="68" y="248">No model, optimizer, attention-kernel, or dataset-format changes.</text>
+  <text class="small" x="470" y="248">Details live in the package docs.</text>
+</svg>

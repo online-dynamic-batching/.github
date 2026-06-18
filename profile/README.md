@@ -27,8 +27,8 @@
 
 <p align="center">
   <img
-    src="../assets/online-grouping.svg"
-    alt="Online dynamic grouping diagram"
+    src="../assets/odb-banner.svg"
+    alt="Online Dynamic Batching project banner"
     width="760"
   >
 </p>
