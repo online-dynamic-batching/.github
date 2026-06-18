@@ -1,27 +1,54 @@
-# Online Dynamic Batching
+<h1 align="center">Online Dynamic Batching</h1>
 
-Online Dynamic Batching builds DataLoader-side batching tools for variable-length
-LLM and multimodal fine-tuning.
+<p align="center">
+  <strong>Batch after the input pipeline knows the truth.</strong>
+</p>
 
-Our main package, **Online Dynamic Batching (ODB)**, observes training length
-after the real input pipeline has run: preprocessing, chat templates,
-tokenization, truncation, augmentation, and multimodal visual-token expansion.
-It then forms token-budgeted batches online, so short examples get larger
-batches and long examples get smaller batches without changing the model,
-optimizer, attention kernel, or dataset format.
+<p align="center">
+  DataLoader-side tools for variable-length LLM and multimodal fine-tuning.
+  ODB observes real training lengths after preprocessing, templates,
+  tokenization, truncation, augmentation, and visual-token expansion.
+</p>
 
-## Start Here
+<p align="center">
+  <a href="https://github.com/online-dynamic-batching/online-dynamic-batching">
+    <img alt="Main repository" src="https://img.shields.io/badge/repo-online--dynamic--batching-2f6fef">
+  </a>
+  <a href="https://github.com/online-dynamic-batching/online-dynamic-batching/blob/main/LICENSE">
+    <img alt="License" src="https://img.shields.io/badge/license-Apache--2.0-1f883d">
+  </a>
+  <a href="https://github.com/online-dynamic-batching/online-dynamic-batching/blob/main/pyproject.toml">
+    <img alt="Python" src="https://img.shields.io/badge/python-3.9%2B-3776ab">
+  </a>
+  <a href="https://github.com/online-dynamic-batching/online-dynamic-batching/tree/main/docs/integration-guides">
+    <img alt="Integrations" src="https://img.shields.io/badge/integrations-PyTorch%20%7C%20HF%20%7C%20Accelerate%20%7C%20Lightning-6f42c1">
+  </a>
+</p>
 
-- [`online-dynamic-batching`](https://github.com/online-dynamic-batching/online-dynamic-batching):
-  the PyTorch package with DataLoader integration, DDP alignment, trainer
-  adapters, docs, tests, and public synthetic benchmarks.
-- [Quickstart](https://github.com/online-dynamic-batching/online-dynamic-batching/blob/main/docs/quickstart.md):
-  install the package and run a minimal PyTorch loop.
-- [Integration guides](https://github.com/online-dynamic-batching/online-dynamic-batching/tree/main/docs/integration-guides):
-  PyTorch loops, HuggingFace Trainer, LLaMA-Factory-style trainers, Accelerate,
-  and Lightning.
-- [Benchmark notes](https://github.com/online-dynamic-batching/online-dynamic-batching/blob/main/docs/benchmarks.md):
-  reporting policy, public synthetic benchmark, and representative results.
+<p align="center">
+  <img
+    src="../assets/online-grouping.svg"
+    alt="Online dynamic grouping diagram"
+    width="760"
+  >
+</p>
+
+## The Project
+
+**Online Dynamic Batching (ODB)** forms token-budgeted batches online, at the
+DataLoader/collate boundary. Short examples get larger batches, long examples
+get smaller batches, and the model, optimizer, attention kernel, and dataset
+format stay in place.
+
+Most training stacks decide batch shape before the final input length is known.
+ODB moves that decision to the point where the length is already observable.
+
+| Start here | What you get |
+| --- | --- |
+| [`online-dynamic-batching`](https://github.com/online-dynamic-batching/online-dynamic-batching) | PyTorch package, trainer adapters, docs, tests, examples, and synthetic benchmarks |
+| [Quickstart](https://github.com/online-dynamic-batching/online-dynamic-batching/blob/main/docs/quickstart.md) | Minimal install and first PyTorch loop |
+| [Integration guides](https://github.com/online-dynamic-batching/online-dynamic-batching/tree/main/docs/integration-guides) | PyTorch loops, HuggingFace Trainer, LLaMA-Factory-style trainers, Accelerate, and Lightning |
+| [Benchmark notes](https://github.com/online-dynamic-batching/online-dynamic-batching/blob/main/docs/benchmarks.md) | Reporting policy, public synthetic benchmark, and representative results |
 
 ## Install
 
@@ -56,20 +83,20 @@ for batch in dataloader:
     loss.backward()
 ```
 
-## What We Care About
+## Design Values
 
-- Training-time length observability instead of stale offline length caches.
-- Distributed training semantics that make variable local work explicit.
-- Practical trainer adapters with a clear metadata and loss-scaling contract.
-- Reproducible public validation before production-scale claims.
-- Small, reviewable integrations that keep model code and kernels untouched.
+- Observe real lengths at training time instead of trusting stale length caches.
+- Keep batching at the DataLoader boundary, away from model and kernel code.
+- Make distributed variable work explicit with aligned grouping and step info.
+- Treat loss scaling, emitted-sample accounting, and trainer stopping semantics
+  as first-class integration contracts.
+- Keep public validation reproducible before making production-scale claims.
 
-## Ecosystem
+## Ecosystem Shape
 
-For the public launch, the main repository carries the package, documentation,
-examples, benchmark notes, and agent-assisted integration skill. Supporting
-repositories should be split out only when they have independent value: a docs
-site, a public benchmark harness, paper artifacts based only on public data, or
-community-maintained recipes.
+The main repository carries the package, documentation, examples, benchmark
+notes, and agent-assisted integration skill. Supporting repositories will be
+split out only when they have independent value: a docs site, a public benchmark
+harness, public-data paper artifacts, or community-maintained recipes.
 
 Apache-2.0.

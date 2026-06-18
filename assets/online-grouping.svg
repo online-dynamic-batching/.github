@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="760" viewBox="0 0 760 760" role="img" aria-labelledby="title desc">
+  <title id="title">ODB DDP grouping and group-count alignment</title>
+  <desc id="desc">A DDP diagram showing rank-local token-budget grouping, all-gathered group counts, and an aligned schedule with IDLE steps for ranks with fewer local groups.</desc>
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #667386;
+      --line: #d7dee9;
+      --panel: #ffffff;
+      --bg: #f7f9fc;
+      --blue: #2f6fed;
+      --blue-soft: #edf4ff;
+      --green: #1c9c5a;
+      --amber: #d88a13;
+      --red: #d64545;
+      --violet: #6f42c1;
+      --violet-soft: #f5f0ff;
+      --gray-soft: #f1f3f6;
+    }
+    .bg { fill: var(--bg); }
+    .panel { fill: var(--panel); stroke: var(--line); stroke-width: 1.4; rx: 12; }
+    .panel-blue { fill: var(--blue-soft); stroke: #9bbcf8; stroke-width: 1.4; rx: 12; }
+    .sync { fill: var(--violet-soft); stroke: #c8b5ef; stroke-width: 1.4; rx: 12; }
+    .title { fill: var(--ink); font: 700 20px system-ui, -apple-system, Segoe UI, sans-serif; }
+    .muted { fill: var(--muted); font: 500 12px system-ui, -apple-system, Segoe UI, sans-serif; }
+    .label { fill: var(--ink); font: 650 13px system-ui, -apple-system, Segoe UI, sans-serif; }
+    .small { fill: var(--muted); font: 500 10.5px system-ui, -apple-system, Segoe UI, sans-serif; }
+    .rank { fill: var(--ink); font: 700 12px system-ui, -apple-system, Segoe UI, sans-serif; }
+    .mono { fill: var(--ink); font: 650 11px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .sample { rx: 5; filter: drop-shadow(0 1px 1px rgba(23,32,51,.12)); }
+    .group { fill: #ffffff; stroke: #b9c5d6; stroke-width: 1.2; rx: 8; }
+    .idle { fill: var(--gray-soft); stroke: #c8ced8; stroke-width: 1.2; rx: 8; stroke-dasharray: 4 4; }
+    .cell { fill: #ffffff; stroke: #c6d5f4; stroke-width: 1.1; rx: 8; }
+    .arrow { stroke: #8a95a5; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+    .arrow-blue { stroke: var(--blue); stroke-width: 2.2; fill: none; marker-end: url(#arrow-blue); }
+    .arrow-violet { stroke: var(--violet); stroke-width: 2.2; fill: none; marker-end: url(#arrow-violet); }
+    .pulse { animation: pulse 2.6s ease-in-out infinite; transform-origin: center; }
+    .step0 { animation: step0 6s ease-in-out infinite; }
+    .step1 { animation: step1 6s ease-in-out infinite; }
+    .step2 { animation: step2 6s ease-in-out infinite; }
+    @keyframes pulse {
+      0%, 100% { opacity: .95; }
+      50% { opacity: .58; }
+    }
+    @keyframes step0 {
+      0%, 20% { opacity: .45; }
+      30%, 72% { opacity: 1; }
+      100% { opacity: .45; }
+    }
+    @keyframes step1 {
+      0%, 34% { opacity: .45; }
+      44%, 84% { opacity: 1; }
+      100% { opacity: .45; }
+    }
+    @keyframes step2 {
+      0%, 48% { opacity: .45; }
+      58%, 94% { opacity: 1; }
+      100% { opacity: .45; }
+    }
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8a95a5"/>
+    </marker>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2f6fed"/>
+    </marker>
+    <marker id="arrow-violet" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6f42c1"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="760" height="760"/>
+  <text class="title" x="32" y="38">ODB in DDP: local grouping, then group-count alignment</text>
+  <text class="muted" x="32" y="62">Each rank groups its own observed samples. Ranks then synchronize group counts and emit aligned steps.</text>
+
+  <rect class="panel" x="32" y="86" width="696" height="254"/>
+  <text class="label" x="54" y="114">1. Single rank: observed lengths -> sorted window -> token-budget groups</text>
+  <text class="small" x="54" y="135">Example rank 0. Lengths become known after tokenization, templates, and image expansion.</text>
+
+  <text class="rank" x="54" y="174">observed order</text>
+  <rect class="sample" x="162" y="160" width="78" height="18" fill="var(--red)"/>
+  <rect class="sample" x="252" y="160" width="28" height="18" fill="var(--green)"/>
+  <rect class="sample" x="292" y="160" width="52" height="18" fill="var(--amber)"/>
+  <rect class="sample" x="356" y="160" width="26" height="18" fill="var(--green)"/>
+  <rect class="sample" x="394" y="160" width="28" height="18" fill="var(--green)"/>
+
+  <path class="arrow" d="M 454 169 C 474 169, 484 169, 504 169"/>
+  <text class="small" x="458" y="154">sort by observed length</text>
+
+  <text class="rank" x="54" y="225">sorted window</text>
+  <rect class="sample" x="162" y="211" width="26" height="18" fill="var(--green)"/>
+  <rect class="sample" x="198" y="211" width="28" height="18" fill="var(--green)"/>
+  <rect class="sample" x="236" y="211" width="28" height="18" fill="var(--green)"/>
+  <rect class="sample" x="276" y="211" width="52" height="18" fill="var(--amber)"/>
+  <rect class="sample" x="340" y="211" width="78" height="18" fill="var(--red)"/>
+
+  <path class="arrow" d="M 454 220 C 474 220, 484 220, 504 220"/>
+  <text class="small" x="458" y="205">cut groups: tokens &lt;= B</text>
+
+  <text class="rank" x="54" y="288">rank 0 groups</text>
+  <rect class="group step0" x="162" y="266" width="78" height="34"/>
+  <text class="mono" x="170" y="258">g0</text>
+  <rect class="sample" x="172" y="274" width="18" height="16" fill="var(--green)"/>
+  <rect class="sample" x="194" y="274" width="18" height="16" fill="var(--green)"/>
+  <rect class="sample" x="216" y="274" width="14" height="16" fill="var(--green)"/>
+  <rect class="group step1" x="260" y="266" width="56" height="34"/>
+  <text class="mono" x="268" y="258">g1</text>
+  <rect class="sample" x="270" y="274" width="34" height="16" fill="var(--amber)"/>
+  <rect class="group step2" x="336" y="266" width="70" height="34"/>
+  <text class="mono" x="344" y="258">g2</text>
+  <rect class="sample" x="346" y="274" width="48" height="16" fill="var(--red)"/>
+  <text class="mono" x="454" y="287">rank0_group_count = 3</text>
+
+  <rect class="panel" x="32" y="362" width="696" height="156"/>
+  <text class="label" x="54" y="390">2. Across ranks: all_gather group counts, then align to the max</text>
+  <text class="small" x="54" y="411">Only counts and flags are exchanged; samples and tensors stay rank-local.</text>
+
+  <text class="rank" x="54" y="450">rank 1</text>
+  <rect class="group step0" x="112" y="429" width="72" height="34"/>
+  <text class="mono" x="120" y="422">g0</text>
+  <rect class="sample" x="122" y="437" width="20" height="16" fill="var(--green)"/>
+  <rect class="sample" x="146" y="437" width="20" height="16" fill="var(--green)"/>
+  <rect class="group step1" x="196" y="429" width="56" height="34"/>
+  <text class="mono" x="204" y="422">g1</text>
+  <rect class="sample" x="206" y="437" width="32" height="16" fill="var(--amber)"/>
+  <text class="mono" x="276" y="449">rank1_group_count = 2</text>
+
+  <text class="rank" x="54" y="496">rank 2</text>
+  <rect class="group step0" x="112" y="475" width="72" height="34"/>
+  <text class="mono" x="120" y="468">g0</text>
+  <rect class="sample" x="122" y="483" width="44" height="16" fill="var(--red)"/>
+  <text class="mono" x="276" y="495">rank2_group_count = 1</text>
+
+  <path class="arrow-violet" d="M 454 469 C 472 469, 482 469, 500 469"/>
+  <rect class="sync pulse" x="514" y="424" width="176" height="76"/>
+  <text class="label" x="538" y="450">all_gather counts</text>
+  <text class="mono" x="538" y="472">[3, 2, 1]</text>
+  <text class="mono" x="538" y="492">aligned = max = 3</text>
+
+  <rect class="panel-blue" x="32" y="540" width="696" height="188"/>
+  <text class="label" x="54" y="568">3. Aligned model-step schedule</text>
+  <text class="small" x="54" y="589">Rows are model steps. Missing local groups become IDLE/Join steps; the trainer skips them.</text>
+
+  <text class="mono" x="190" y="620">step</text>
+  <text class="mono" x="300" y="620">rank 0</text>
+  <text class="mono" x="440" y="620">rank 1</text>
+  <text class="mono" x="580" y="620">rank 2</text>
+
+  <text class="mono" x="196" y="649">0</text>
+  <rect class="cell step0" x="288" y="631" width="86" height="26"/>
+  <text class="mono" x="322" y="649">g0</text>
+  <rect class="cell step0" x="428" y="631" width="86" height="26"/>
+  <text class="mono" x="462" y="649">g0</text>
+  <rect class="cell step0" x="568" y="631" width="86" height="26"/>
+  <text class="mono" x="602" y="649">g0</text>
+
+  <text class="mono" x="196" y="675">1</text>
+  <rect class="cell step1" x="288" y="659" width="86" height="26"/>
+  <text class="mono" x="322" y="677">g1</text>
+  <rect class="cell step1" x="428" y="659" width="86" height="26"/>
+  <text class="mono" x="462" y="677">g1</text>
+  <rect class="idle step1" x="568" y="659" width="86" height="26"/>
+  <text class="mono" x="586" y="677">IDLE</text>
+
+  <text class="mono" x="196" y="701">2</text>
+  <rect class="cell step2" x="288" y="687" width="86" height="26"/>
+  <text class="mono" x="322" y="705">g2</text>
+  <rect class="idle step2" x="428" y="687" width="86" height="26"/>
+  <text class="mono" x="446" y="705">IDLE</text>
+  <rect class="idle step2" x="568" y="687" width="86" height="26"/>
+  <text class="mono" x="586" y="705">IDLE</text>
+</svg>
