@@ -1,7 +1,7 @@
 <h1 align="center">Online Dynamic Batching</h1>
 
 <p align="center">
-  <strong>Batch after the input pipeline knows the truth.</strong>
+  <strong>One-line DataLoader replacement for faster variable-length training.</strong>
 </p>
 
 <p align="center">
@@ -58,13 +58,17 @@ DataLoader/collate boundary. Short examples get larger batches, long examples
 get smaller batches, and the model, optimizer, attention kernel, and dataset
 format stay in place.
 
+```python
+dataloader = odb.ODBDataLoader(..., token_budget=16384)  # replaces DataLoader(...)
+```
+
 Most training stacks decide batch shape before the final input length is known.
 ODB moves that decision to the point where the length is already observable.
 
 | Start here | What you get |
 | --- | --- |
 | [`online-dynamic-batching`](https://github.com/online-dynamic-batching/online-dynamic-batching) | PyTorch package, trainer adapters, docs, tests, examples, and synthetic benchmarks |
-| [Quickstart](https://github.com/online-dynamic-batching/online-dynamic-batching/blob/main/docs/quickstart.md) | Minimal install and first PyTorch loop |
+| [Quickstart](https://github.com/online-dynamic-batching/online-dynamic-batching/blob/main/docs/quickstart.md) | One-line DataLoader replacement and first PyTorch loop |
 | [Choose one integration path](https://github.com/online-dynamic-batching/online-dynamic-batching/tree/main/docs/integration-guides) | Pick the adapter that matches your stack: PyTorch loops, HuggingFace Trainer, LLaMA-Factory/LLaVA-Factory, Accelerate, or Lightning |
 | [Benchmark notes](https://github.com/online-dynamic-batching/online-dynamic-batching/blob/main/docs/benchmarks.md) | Reporting policy, public synthetic benchmark, and representative results |
 
