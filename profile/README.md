@@ -11,11 +11,6 @@
 </p>
 
 <p align="center">
-  Online dynamic batching for LLM and multimodal fine-tuning: faster batches,
-  real post-preprocessing lengths, and no model or optimizer changes.
-</p>
-
-<p align="center">
   <a href="https://github.com/online-dynamic-batching/online-dynamic-batching">
     <img alt="Main repository" src="https://img.shields.io/badge/repo-online--dynamic--batching-2f6fef">
   </a>
