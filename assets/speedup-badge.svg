@@ -1,16 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="520" height="118" viewBox="0 0 520 118" role="img" aria-labelledby="title desc">
   <title id="title">Up to 2.5x faster</title>
   <desc id="desc">A red speedup banner highlighting up to 2.5x faster LLM and VLM training.</desc>
-  <style>
-    .shell { fill: #fff7f7; stroke: #f0b7b7; stroke-width: 1.4; rx: 20; }
-    .eyebrow { fill: #7a1f1f; font: 800 17px system-ui, -apple-system, Segoe UI, sans-serif; letter-spacing: 2.8px; }
-    .number { fill: #d73a49; font: 900 64px system-ui, -apple-system, Segoe UI, sans-serif; }
-    .label { fill: #22272e; font: 850 30px system-ui, -apple-system, Segoe UI, sans-serif; }
-    .sub { fill: #6a737d; font: 650 13px system-ui, -apple-system, Segoe UI, sans-serif; }
-  </style>
-  <rect class="shell" x="8" y="8" width="504" height="102" rx="20"/>
-  <text class="eyebrow" x="42" y="43">UP TO</text>
-  <text class="number" x="136" y="76">2.5x</text>
-  <text class="label" x="310" y="62">FASTER</text>
-  <text class="sub" x="313" y="84">representative 8B full fine-tuning</text>
+  <rect x="8" y="8" width="504" height="102" rx="20" fill="#d73a49"/>
+  <text x="42" y="43" fill="#ffe3e6" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="800" letter-spacing="3">UP TO</text>
+  <text x="132" y="78" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="66" font-weight="900">2.5x</text>
+  <text x="312" y="62" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900">FASTER</text>
+  <text x="314" y="84" fill="#ffe3e6" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">representative 8B full fine-tuning</text>
 </svg>
