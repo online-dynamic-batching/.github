@@ -26,6 +26,24 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/online-dynamic-batching/online-dynamic-batching/blob/main/docs/integration-guides/pytorch-loop.md">
+    <img alt="PyTorch DataLoader" src="https://img.shields.io/badge/PyTorch-DataLoader-EE4C2C?logo=pytorch&logoColor=white">
+  </a>
+  <a href="https://github.com/online-dynamic-batching/online-dynamic-batching/blob/main/docs/integration-guides/hf-trainer.md">
+    <img alt="HuggingFace Trainer" src="https://img.shields.io/badge/HuggingFace-Trainer-FFD21E?logo=huggingface&logoColor=black">
+  </a>
+  <a href="https://github.com/online-dynamic-batching/online-dynamic-batching/blob/main/docs/integration-guides/llamafactory.md">
+    <img alt="LLaMA-Factory adapter" src="https://img.shields.io/badge/LLaMA--Factory-adapter-4B8BBE?logo=github&logoColor=white">
+  </a>
+  <a href="https://github.com/online-dynamic-batching/online-dynamic-batching/blob/main/docs/integration-guides/accelerate.md">
+    <img alt="Accelerate loops" src="https://img.shields.io/badge/Accelerate-loops-7C3AED?logo=huggingface&logoColor=white">
+  </a>
+  <a href="https://github.com/online-dynamic-batching/online-dynamic-batching/blob/main/docs/integration-guides/lightning.md">
+    <img alt="Lightning Trainer" src="https://img.shields.io/badge/Lightning-Trainer-792EE5?logo=lightning&logoColor=white">
+  </a>
+</p>
+
+<p align="center">
   <img
     src="../assets/odb-banner.svg"
     alt="Online Dynamic Batching project banner"
@@ -47,8 +65,18 @@ ODB moves that decision to the point where the length is already observable.
 | --- | --- |
 | [`online-dynamic-batching`](https://github.com/online-dynamic-batching/online-dynamic-batching) | PyTorch package, trainer adapters, docs, tests, examples, and synthetic benchmarks |
 | [Quickstart](https://github.com/online-dynamic-batching/online-dynamic-batching/blob/main/docs/quickstart.md) | Minimal install and first PyTorch loop |
-| [Integration guides](https://github.com/online-dynamic-batching/online-dynamic-batching/tree/main/docs/integration-guides) | PyTorch loops, HuggingFace Trainer, LLaMA-Factory-style trainers, Accelerate, and Lightning |
+| [Framework integration examples](https://github.com/online-dynamic-batching/online-dynamic-batching/tree/main/docs/integration-guides) | PyTorch loops, HuggingFace Trainer, LLaMA-Factory/LLaVA-Factory, Accelerate, and Lightning |
 | [Benchmark notes](https://github.com/online-dynamic-batching/online-dynamic-batching/blob/main/docs/benchmarks.md) | Reporting policy, public synthetic benchmark, and representative results |
+
+## Framework Examples
+
+| Framework | ODB entry point |
+| --- | --- |
+| [PyTorch loops](https://github.com/online-dynamic-batching/online-dynamic-batching/blob/main/docs/integration-guides/pytorch-loop.md) | `ODBDataLoader(...)` or `odb.apply(dataloader, ...)` |
+| [HuggingFace Trainer](https://github.com/online-dynamic-batching/online-dynamic-batching/blob/main/docs/integration-guides/hf-trainer.md) | `odb.integrations.hf.configure_trainer(...)` and `ODBTrainerMixin` |
+| [LLaMA-Factory / LLaVA-Factory](https://github.com/online-dynamic-batching/online-dynamic-batching/blob/main/docs/integration-guides/llamafactory.md) | `odb.integrations.llamafactory.configure_trainer(...)` |
+| [Accelerate](https://github.com/online-dynamic-batching/online-dynamic-batching/blob/main/docs/integration-guides/accelerate.md) | `odb.integrations.accelerate.configure_accelerator(...)` |
+| [Lightning](https://github.com/online-dynamic-batching/online-dynamic-batching/blob/main/docs/integration-guides/lightning.md) | `odb.integrations.lightning.ODBLightningCallback` |
 
 ## Install
 
