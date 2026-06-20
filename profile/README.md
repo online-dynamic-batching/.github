@@ -3,7 +3,7 @@
 <h2 align="center">Faster LLM/VLM training with one DataLoader line</h2>
 
 <p align="center">
-  <img alt="Up to 2.5x faster" src="https://img.shields.io/badge/up%20to-2.5x%20faster-d73a49?style=for-the-badge">
+  <img alt="Up to 2.5x faster" src="../assets/speedup-badge.svg" width="520">
 </p>
 
 <p align="center">
