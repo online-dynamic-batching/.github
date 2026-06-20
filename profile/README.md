@@ -1,15 +1,3 @@
-<h1 align="center">Online Dynamic Batching</h1>
-
-<h2 align="center">Faster LLM/VLM training with one DataLoader line</h2>
-
-<p align="center">
-  <img alt="Up to 2.5x faster" src="../assets/speedup-badge-wide.svg" width="560">
-</p>
-
-<p align="center">
-  <code>DataLoader(...)</code> → <code>odb.ODBDataLoader(...)</code>
-</p>
-
 <p align="center">
   <a href="https://github.com/online-dynamic-batching/online-dynamic-batching">
     <img alt="Main repository" src="https://img.shields.io/badge/repo-online--dynamic--batching-2f6fef">
@@ -41,6 +29,18 @@
   <a href="https://github.com/online-dynamic-batching/online-dynamic-batching/blob/main/docs/integration-guides/lightning.md">
     <img alt="Lightning Trainer" src="https://img.shields.io/badge/Lightning-Trainer-792EE5?logo=lightning&logoColor=white">
   </a>
+</p>
+
+<h1 align="center">Online Dynamic Batching</h1>
+
+<h2 align="center">Faster LLM/VLM training with one DataLoader line</h2>
+
+<p align="center">
+  <img alt="Up to 2.5x faster" src="../assets/speedup-badge-wide.svg" width="560">
+</p>
+
+<p align="center">
+  <code>DataLoader(...)</code> → <code>odb.ODBDataLoader(...)</code>
 </p>
 
 <p align="center">
