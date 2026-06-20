@@ -1,11 +1,14 @@
 <h1 align="center">Online Dynamic Batching</h1>
 
+<h2 align="center">One-line DataLoader replacement for faster variable-length training</h2>
+
 <p align="center">
-  <strong>One-line DataLoader replacement for faster variable-length training.</strong>
+  <code>DataLoader(...)</code> → <code>odb.ODBDataLoader(..., token_budget=16384)</code>
 </p>
 
 <p align="center">
-  DataLoader-side tools for variable-length LLM and multimodal fine-tuning.
+  Accelerate variable-length LLM and multimodal fine-tuning without changing
+  model code, optimizer logic, attention kernels, or dataset format.
   ODB observes real training lengths after preprocessing, templates,
   tokenization, truncation, augmentation, and visual-token expansion.
 </p>
