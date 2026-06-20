@@ -7,10 +7,8 @@
 </p>
 
 <p align="center">
-  Accelerate variable-length LLM and multimodal fine-tuning without changing
-  model code, optimizer logic, attention kernels, or dataset format.
-  ODB observes real training lengths after preprocessing, templates,
-  tokenization, truncation, augmentation, and visual-token expansion.
+  Online dynamic batching for LLM and multimodal fine-tuning: faster batches,
+  real post-preprocessing lengths, and no model or optimizer changes.
 </p>
 
 <p align="center">
