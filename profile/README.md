@@ -65,10 +65,13 @@ ODB moves that decision to the point where the length is already observable.
 | --- | --- |
 | [`online-dynamic-batching`](https://github.com/online-dynamic-batching/online-dynamic-batching) | PyTorch package, trainer adapters, docs, tests, examples, and synthetic benchmarks |
 | [Quickstart](https://github.com/online-dynamic-batching/online-dynamic-batching/blob/main/docs/quickstart.md) | Minimal install and first PyTorch loop |
-| [Framework integration examples](https://github.com/online-dynamic-batching/online-dynamic-batching/tree/main/docs/integration-guides) | PyTorch loops, HuggingFace Trainer, LLaMA-Factory/LLaVA-Factory, Accelerate, and Lightning |
+| [Choose one integration path](https://github.com/online-dynamic-batching/online-dynamic-batching/tree/main/docs/integration-guides) | Pick the adapter that matches your stack: PyTorch loops, HuggingFace Trainer, LLaMA-Factory/LLaVA-Factory, Accelerate, or Lightning |
 | [Benchmark notes](https://github.com/online-dynamic-batching/online-dynamic-batching/blob/main/docs/benchmarks.md) | Reporting policy, public synthetic benchmark, and representative results |
 
-## Framework Examples
+## Choose One Integration Path
+
+Pick the row that matches your training stack. These are alternatives, not a
+checklist.
 
 | Framework | ODB entry point |
 | --- | --- |
