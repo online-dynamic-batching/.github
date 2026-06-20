@@ -1,6 +1,6 @@
 <h1 align="center">Online Dynamic Batching</h1>
 
-<h2 align="center">Speed up LLM/VLM training with one DataLoader line</h2>
+<h2 align="center">Up to 2.5x faster LLM/VLM training with one DataLoader line</h2>
 
 <p align="center">
   <code>DataLoader(...)</code> → <code>odb.ODBDataLoader(...)</code>
