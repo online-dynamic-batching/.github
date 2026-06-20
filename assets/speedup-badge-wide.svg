@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="118" viewBox="0 0 560 118" role="img" aria-labelledby="title desc">
+  <title id="title">Up to 2.5x faster</title>
+  <desc id="desc">A speedup banner highlighting up to 2.5x faster LLM and VLM training.</desc>
+  <rect x="8" y="8" width="544" height="102" rx="20" fill="#fff7f7" stroke="#f0b7b7" stroke-width="1.4"/>
+  <text x="42" y="43" fill="#7a1f1f" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="800" letter-spacing="3">UP TO</text>
+  <text x="132" y="78" fill="#d73a49" font-family="Arial, Helvetica, sans-serif" font-size="66" font-weight="900">2.5x</text>
+  <text x="312" y="62" fill="#22272e" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900">FASTER</text>
+  <text x="314" y="84" fill="#6a737d" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">representative 8B full FT</text>
+</svg>

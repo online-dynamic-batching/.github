@@ -3,7 +3,7 @@
 <h2 align="center">Faster LLM/VLM training with one DataLoader line</h2>
 
 <p align="center">
-  <img alt="Up to 2.5x faster" src="../assets/speedup-badge.svg" width="560">
+  <img alt="Up to 2.5x faster" src="../assets/speedup-badge-wide.svg" width="560">
 </p>
 
 <p align="center">
