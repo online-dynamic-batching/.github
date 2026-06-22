@@ -11,6 +11,9 @@
   <a href="https://github.com/online-dynamic-batching/online-dynamic-batching/tree/main/docs/integration-guides">
     <img alt="Integrations" src="https://img.shields.io/badge/integrations-PyTorch%20%7C%20HF%20%7C%20Accelerate%20%7C%20Lightning-6f42c1">
   </a>
+  <a href="https://arxiv.org/abs/2606.19989">
+    <img alt="arXiv paper" src="https://img.shields.io/badge/arXiv-2606.19989-b31b1b">
+  </a>
 </p>
 
 <p align="center">
@@ -50,6 +53,16 @@
     width="760"
   >
 </p>
+
+## Paper
+
+ODB is introduced in
+[**Online Dynamic Batching with Formal Guarantees for LLM Training**](https://arxiv.org/abs/2606.19989)
+by Dian Li, Zekun Wang, Yaoru Wang, and Jiahong Yan.
+
+Links: [arXiv](https://arxiv.org/abs/2606.19989) ·
+[PDF](https://arxiv.org/pdf/2606.19989) ·
+[BibTeX](https://github.com/online-dynamic-batching/online-dynamic-batching#paper)
 
 ## The Project
 
