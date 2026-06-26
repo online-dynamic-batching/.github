@@ -106,8 +106,8 @@ integration path, all based on the `online-dynamic-batching` pip package.
 | Example | Focus |
 | --- | --- |
 | [`odb-mm-mix-example`](https://github.com/online-dynamic-batching/odb-mm-mix-example) | Shared public data recipe and local TMDB utilities |
-| [`odb-mm-mix-llamafactory`](https://github.com/online-dynamic-batching/odb-mm-mix-llamafactory) | Paper-aligned LLaMA-Factory reference path |
-| [`odb-mm-mix-hf-trainer`](https://github.com/online-dynamic-batching/odb-mm-mix-hf-trainer) | Hugging Face `Trainer` native adapter example |
+| [`odb-example-llamafactory`](https://github.com/online-dynamic-batching/odb-example-llamafactory) | LLaMA-Factory integration example |
+| [`odb-example-hf-trainer`](https://github.com/online-dynamic-batching/odb-example-hf-trainer) | Hugging Face `Trainer` native adapter example |
 | [`odb-mm-mix-accelerate`](https://github.com/online-dynamic-batching/odb-mm-mix-accelerate) | Accelerate custom-loop example |
 | [`odb-mm-mix-lightning`](https://github.com/online-dynamic-batching/odb-mm-mix-lightning) | PyTorch Lightning adapter example |
 
