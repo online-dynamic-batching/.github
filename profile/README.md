@@ -21,14 +21,6 @@
   <img alt="Up to 4.4x faster" src="../assets/speedup-badge-wide.svg" width="560">
 </p>
 
-<p align="center">
-  <img
-    src="../assets/odb-banner.svg"
-    alt="Online Dynamic Batching project banner"
-    width="760"
-  >
-</p>
-
 ## Start Here
 
 Online Dynamic Batching (ODB) forms token-budgeted batches at the
