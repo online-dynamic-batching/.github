@@ -31,7 +31,7 @@ training stack.
 | [`online-dynamic-batching`](https://github.com/online-dynamic-batching/online-dynamic-batching) | Install ODB, read the API, and choose an integration path |
 | [`pip install online-dynamic-batching`](https://pypi.org/project/online-dynamic-batching/) | Install the released package |
 | [Quickstart](https://github.com/online-dynamic-batching/online-dynamic-batching/blob/main/docs/quickstart.md) | Try the minimal PyTorch loop and understand the ODB-ready batch contract |
-| Example projects | Run a framework-specific MM-Mix workflow |
+| [Example projects](#project-map) | Run a framework-specific example workflow |
 
 ## Project Map
 
