@@ -15,14 +15,14 @@
 
 <h1 align="center">Online Dynamic Batching</h1>
 
-<h2 align="center">Faster LLM/VLM fine-tuning with one DataLoader line</h2>
+<h2 align="center">Online dynamic batching for faster LLM/VLM fine-tuning</h2>
 
 <p align="center">
   <img alt="Up to 4.4x faster" src="../assets/speedup-badge-wide.svg" width="560">
 </p>
 
 <p align="center">
-  <code>DataLoader(...)</code> -> <code>odb.ODBDataLoader(...)</code>
+  <code>enable_odb(...)</code> for supported trainers · <code>ODBDataLoader(...)</code> for custom PyTorch loops
 </p>
 
 <p align="center">
