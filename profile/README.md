@@ -22,10 +22,6 @@
 </p>
 
 <p align="center">
-  <code>enable_odb(...)</code> for supported trainers · <code>ODBDataLoader(...)</code> for custom PyTorch loops
-</p>
-
-<p align="center">
   <img
     src="../assets/odb-banner.svg"
     alt="Online Dynamic Batching project banner"
