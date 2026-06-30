@@ -41,7 +41,7 @@ examples.
 | Repository | Role |
 | --- | --- |
 | [`online-dynamic-batching`](https://github.com/online-dynamic-batching/online-dynamic-batching) | Core package, integration guides, API docs, tests, and benchmark notes |
-| [`odb-mm-mix-example`](https://github.com/online-dynamic-batching/odb-mm-mix-example) | Shared public MM-Mix-style data recipe and local TMDB utilities |
+| [`build-mm-mix-dataset`](https://github.com/online-dynamic-batching/build-mm-mix-dataset) | Build a local public MM-Mix-style dataset and TMDB records |
 | [`odb-example-llamafactory`](https://github.com/online-dynamic-batching/odb-example-llamafactory) | LLaMA-Factory training and evaluation workflow |
 | [`odb-example-hf-trainer`](https://github.com/online-dynamic-batching/odb-example-hf-trainer) | Hugging Face `Trainer` workflow |
 | [`odb-example-accelerate`](https://github.com/online-dynamic-batching/odb-example-accelerate) | Accelerate custom-loop workflow |
